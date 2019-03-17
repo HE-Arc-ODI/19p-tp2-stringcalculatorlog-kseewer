@@ -1,8 +1,0 @@
-12:49:37 [main] INFO  ch.hearc.ig.odi.stringcalculatortdd.StringCalculator -  // delimiter
-12:49:37 [main] INFO  ch.hearc.ig.odi.stringcalculatortdd.StringCalculator -  // delimiter
-12:49:37 [main] INFO  ch.hearc.ig.odi.stringcalculatortdd.StringCalculator -  // delimiter
-12:49:37 [main] INFO  ch.hearc.ig.odi.stringcalculatortdd.StringCalculator -  // delimiter
-12:49:37 [main] FATAL ch.hearc.ig.odi.stringcalculatortdd.StringCalculator - negative number not allowed: [-2]
-12:49:37 [main] WARN  ch.hearc.ig.odi.stringcalculatortdd.StringCalculator - bigger than 10000 
-12:49:37 [main] WARN  ch.hearc.ig.odi.stringcalculatortdd.StringCalculator - bigger than 10000 
-12:49:37 [main] FATAL ch.hearc.ig.odi.stringcalculatortdd.StringCalculator - negative number not allowed: [-2, -5, -1]
