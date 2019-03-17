@@ -9,18 +9,12 @@ import org.apache.logging.log4j.Logger;
 import java.util.regex.Pattern;
 
 public class StringCalculator {
+    private static Logger logger = LogManager.getLogger(StringCalculator.class);
 
     public StringCalculator() {
     }
     Logger LOG = LogManager.getLogger(StringCalculator.class);
     public int add(final String numbers) {
-        LOG.debug("This Will Be Printed On Debug");
-        LOG.info("This Will Be Printed On Info");
-        LOG.warn("This Will Be Printed On Warn");
-        LOG.error("This Will Be Printed On Error");
-        LOG.fatal("This Will Be Printed On Fatal");
-
-        LOG.info("Appending string: {}.", "Hello, World");
         //default delimiter
         String delimiter = ",|\n";
         String numbersUpdated = numbers;
@@ -28,6 +22,7 @@ public class StringCalculator {
         //if it begins by '//' then it's a personalize delimiter(s)
         if (numbers.startsWith("//")) {
             delimiter = this.extractDelimiter(numbers);
+            logger.info("The Delimiter is "+ delimiter );
             //"cut" the beginning of the string so that the personalize delimiter is removed
             numbersUpdated = numbers.substring(numbers.indexOf("\n") + 1);
         }
@@ -50,9 +45,12 @@ public class StringCalculator {
                 else if (numberInt <= 1000)
                     returnValue += numberInt;
             }
+            else {
+                logger.warn("bigger than 10000 ");
         }
 
         if (negativeNumbers.size() > 0) {
+            logger.fatal("negative number not allowed: "+ negativeNumbers.toString());
             throw new RuntimeException("Negative not allowed: " + negativeNumbers.toString());
         }
 
