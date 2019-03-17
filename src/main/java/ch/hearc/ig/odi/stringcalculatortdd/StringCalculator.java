@@ -44,12 +44,11 @@ public class StringCalculator {
                     negativeNumbers.add(numberInt);
                 else if (numberInt <= 1000)
                     returnValue += numberInt;
-
-                else {
-                    logger.warn("bigger than 10000 ");
-                }
             }
+            else {
+                logger.warn("bigger than 10000 ");
         }
+
         if (negativeNumbers.size() > 0) {
             logger.fatal("negative number not allowed: "+ negativeNumbers.toString());
             throw new RuntimeException("Negative not allowed: " + negativeNumbers.toString());
