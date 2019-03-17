@@ -1,0 +1,4 @@
+13:09:33 [main] FATAL ch.hearc.ig.odi.stringcalculatortdd.StringCalculator - negative number not allowed: [-2]
+13:09:33 [main] FATAL ch.hearc.ig.odi.stringcalculatortdd.StringCalculator - negative number not allowed: [-2, -5, -1]
+13:10:14 [main] FATAL ch.hearc.ig.odi.stringcalculatortdd.StringCalculator - negative number not allowed: [-2]
+13:10:14 [main] FATAL ch.hearc.ig.odi.stringcalculatortdd.StringCalculator - negative number not allowed: [-2, -5, -1]
