@@ -10,10 +10,11 @@ import java.util.regex.Pattern;
 
 public class StringCalculator {
     private static Logger logger = LogManager.getLogger(StringCalculator.class);
-
+    Logger LOG = LogManager.getLogger(StringCalculator.class);
     public StringCalculator() {
     }
-    Logger LOG = LogManager.getLogger(StringCalculator.class);
+
+
     public int add(final String numbers) {
         //default delimiter
         String delimiter = ",|\n";
@@ -21,8 +22,8 @@ public class StringCalculator {
 
         //if it begins by '//' then it's a personalize delimiter(s)
         if (numbers.startsWith("//")) {
+            logger.info(" // delimiter");
             delimiter = this.extractDelimiter(numbers);
-            logger.info("The Delimiter is "+ delimiter );
             //"cut" the beginning of the string so that the personalize delimiter is removed
             numbersUpdated = numbers.substring(numbers.indexOf("\n") + 1);
         }
@@ -44,18 +45,18 @@ public class StringCalculator {
                     negativeNumbers.add(numberInt);
                 else if (numberInt <= 1000)
                     returnValue += numberInt;
+                else {
+                    logger.warn("bigger than 10000 ");
+                }
             }
-            else {
-                logger.warn("bigger than 10000 ");
         }
+            if (negativeNumbers.size() > 0) {
+                logger.fatal("negative number not allowed: " + negativeNumbers.toString());
+                throw new RuntimeException("Negative not allowed: " + negativeNumbers.toString());
+            }
 
-        if (negativeNumbers.size() > 0) {
-            logger.fatal("negative number not allowed: "+ negativeNumbers.toString());
-            throw new RuntimeException("Negative not allowed: " + negativeNumbers.toString());
+            return returnValue;
         }
-
-        return returnValue;
-    }
 
     private String extractDelimiter(String numbers) {
         String[] delimiters;
